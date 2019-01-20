@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2035
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aikont", "Aikont\Aikont.csproj", "{20863BE1-6EC1-45BA-AC54-1AC8F070A441}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AikontLib", "AikontLib\AikontLib.csproj", "{D0E7914C-92BD-4BB7-8398-6F50ED1A114C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AikontCli", "AikontCli\AikontCli.csproj", "{BD80CC6A-9331-4EC9-9544-3F272100105D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{20863BE1-6EC1-45BA-AC54-1AC8F070A441}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20863BE1-6EC1-45BA-AC54-1AC8F070A441}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20863BE1-6EC1-45BA-AC54-1AC8F070A441}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20863BE1-6EC1-45BA-AC54-1AC8F070A441}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D0E7914C-92BD-4BB7-8398-6F50ED1A114C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0E7914C-92BD-4BB7-8398-6F50ED1A114C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0E7914C-92BD-4BB7-8398-6F50ED1A114C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0E7914C-92BD-4BB7-8398-6F50ED1A114C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD80CC6A-9331-4EC9-9544-3F272100105D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD80CC6A-9331-4EC9-9544-3F272100105D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD80CC6A-9331-4EC9-9544-3F272100105D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD80CC6A-9331-4EC9-9544-3F272100105D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7741EB02-3F11-4647-BB17-A056008E1E7A}
+	EndGlobalSection
+EndGlobal
