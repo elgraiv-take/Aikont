@@ -64,7 +64,7 @@ namespace Elgraiv.Aikont
                 switch (o[0])
                 {
                     case 'Z':
-
+                    case 'z':
                         break;
                     case 'M':
                         ConvertMoveTo(o);

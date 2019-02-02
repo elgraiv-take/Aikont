@@ -42,5 +42,13 @@ namespace Elgraiv.Aikont.Ttx
                 }
                 );
         }
+
+        public static void SetHeight(this TtxRoot root,int height)
+        {
+            var strHeight = height.ToString();
+            root.Os2Table.Height.Value = strHeight;
+            root.Os2Table.TypoAscender.Value = strHeight;
+            root.Os2Table.WinAscent.Value = strHeight;
+        }
     }
 }
