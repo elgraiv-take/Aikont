@@ -36,11 +36,18 @@ namespace Elgraiv.Aikont
             set => SetProperty(ref _svgFilePath, value);
         }
 
-        private string _xPath;
-        public string XPath
+        private string _objectId;
+        public string ObjectId
         {
-            get => _xPath;
-            set => SetProperty(ref _xPath, value);
+            get => _objectId;
+            set => SetProperty(ref _objectId, value);
+        }
+
+        private string _svgPathData;
+        public string SvgPathData
+        {
+            get => _svgPathData;
+            set => SetProperty(ref _svgPathData, value);
         }
 
         private float? _size;

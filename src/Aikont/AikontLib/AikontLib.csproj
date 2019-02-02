@@ -50,6 +50,7 @@
     <Compile Include="Glyph.cs" />
     <Compile Include="GlyphSource.cs" />
     <Compile Include="PathConverter.cs" />
+    <Compile Include="PathExtractor.cs" />
     <Compile Include="ProjectConverter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Ttx\Cff.cs" />

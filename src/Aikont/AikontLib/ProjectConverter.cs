@@ -9,9 +9,16 @@ using System.Xml.Serialization;
 
 namespace Elgraiv.Aikont
 {
-    public class ProjectConverter
+    public static class ProjectConverter
     {
-        public void Convert(AikontProject project,string outPath)
+        public static void Convert(string projectPath, string outPath)
+        {
+            var project = new AikontProject();
+            project.Load(projectPath);
+            Convert(project,outPath);
+        }
+
+        public static void Convert(AikontProject project,string outPath)
         {
             var ttx = Convert(project);
 
@@ -25,7 +32,7 @@ namespace Elgraiv.Aikont
             }
         }
 
-        public TtxRoot Convert(AikontProject project)
+        public static TtxRoot Convert(AikontProject project)
         {
             var ttx = new TtxRoot();
 
@@ -44,7 +51,7 @@ namespace Elgraiv.Aikont
                     YOffset = project.CommonData.Size
 
                 };
-                var svgPath = GetPath(glyph);
+                var svgPath = glyph.SvgPathData ?? PathExtractor.ExtractPath(glyph);
                 var path = pathConverter.Convert(svgPath);
                 ttx.AddGlyph(new Glyph()
                 {
@@ -58,10 +65,6 @@ namespace Elgraiv.Aikont
             ttx.SetHeight(project.CommonData.Size);
 
             return ttx;
-        }
-        private string GetPath(GlyphSource glyph)
-        {
-            return glyph.XPath;
         }
     }
 }
