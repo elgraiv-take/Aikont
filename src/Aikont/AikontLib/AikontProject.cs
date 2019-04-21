@@ -13,6 +13,8 @@ namespace Elgraiv.Aikont
     public class AikontProject:BindableBase
     {
         [JsonProperty]
+        public ProjectSettings Settings { get; } = new ProjectSettings();
+        [JsonProperty]
         public FontMetaData MetaData { get; } = new FontMetaData();
         [JsonProperty]
         public CommonData CommonData { get; } = new CommonData();

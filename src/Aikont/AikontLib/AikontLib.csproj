@@ -52,6 +52,7 @@
     <Compile Include="PathConverter.cs" />
     <Compile Include="PathExtractor.cs" />
     <Compile Include="ProjectConverter.cs" />
+    <Compile Include="ProjectSettings.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Ttx\Cff.cs" />
     <Compile Include="Ttx\CharString.cs" />
