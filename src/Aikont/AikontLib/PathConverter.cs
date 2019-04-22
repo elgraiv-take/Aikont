@@ -95,9 +95,9 @@ namespace Elgraiv.Aikont
                         ConvertVerticalLineTo(o);
                         break;
 
-                    //case 'm':
-                    //    ConvertRelativeMoveTo(o);
-                    //    break;
+                    case 'm':
+                        ConvertRelativeMoveTo(o);
+                        break;
                     case 'l':
                         ConvertRelativeLineTo(o);
                         break;
@@ -237,6 +237,23 @@ namespace Elgraiv.Aikont
             _currentPoint = firstPoint;
             _startPoint = firstPoint;
         }
+        private void ConvertRelativeMoveTo(string operation)
+        {
+            if (!_cffCommands.Any())
+            {
+                ConvertMoveTo(operation);
+                return;
+            }
+            var op = operation.Substring(1);
+            var points = ToPoints(op);
+            var firstPoint = points.First();
+            var delta = ConvertXY(firstPoint, true);
+            var command = $"{delta.X} {delta.Y} rmoveto";
+            _cffCommands.Add(command);
+
+            _currentPoint = firstPoint + delta;
+            _startPoint = _currentPoint;
+        }
         private void ConvertCurveTo(string operation)
         {
             var op = operation.Substring(1);
@@ -255,17 +272,21 @@ namespace Elgraiv.Aikont
         private void ConvertRelativeCurveTo(string operation)
         {
             var op = operation.Substring(1);
-            var points = ToPoints(op);
+            var points = ToPoints(op).ToArray();
             var command = string.Empty;
-            var tempCurrent = new Point();
-            foreach (var p in points)
+            for (int curveIndex = 0, i = 0; curveIndex < points.Length / 3; curveIndex++)
             {
-                var point = ConvertXY(p, true);
-                var delta = point - tempCurrent;
-                command += $"{delta.X} {delta.Y} ";
-                tempCurrent = point;
+                var tempCurrent = new Point();
+                for (var p = 0; p < 3; p++, i++)
+                {
+                    var point = ConvertXY(points[i], true);
+                    var delta = point - tempCurrent;
+                    command += $"{delta.X} {delta.Y} ";
+                    tempCurrent = point;
+                }
+                _currentPoint += tempCurrent;
             }
-            _currentPoint += tempCurrent;
+
             command += "rrcurveto";
             _cffCommands.Add(command);
         }
